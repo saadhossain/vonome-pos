@@ -66,7 +66,7 @@ const ProductListings = ({ filteredMedicines }) => {
         }
     ];
     return (
-        <div className="w-7/12 bg-white px-2 pt-5">
+        <div className="listings bg-white px-2 pt-5">
             <div className='border border-secondary rounded-lg p-2 mx-5 sticky top-[86px]'>
                 <input
                     onChange={(e) => setSearchText(e.target.value)}
@@ -79,20 +79,20 @@ const ProductListings = ({ filteredMedicines }) => {
             {/* Menu Sidebar and Medicine List */}
             <div className='w-full flex gap-2 mt-4 sticky top-40'>
                 <div className='w-3/12'>
-                    <div className='p-4 bg-white sticky top-36 h-full'>
+                    <div className='bg-white sticky top-0 h-[60vh] overflow-y-auto'>
                         <div className='flex flex-col'>
                             {
                                 menuItems.map(item => <Link
                                     key={item.id}
                                     to={item.url}
-                                    className='p-2 border-b border-r text-base font-medium text-typo border-typo hover:border-primary hover:bg-primary hover:text-white'
+                                    className={`p-2 border-b border-r text-base font-medium ${item.id === 1 ? 'bg-primary text-white border-primary' : 'bg-transparent text-typo border-typo'} hover:border-primary hover:bg-primary hover:text-white`}
                                 >{item.title}</Link>)
                             }
                         </div>
                     </div>
                 </div>
                 <div className='w-9/12'>
-                    <div className='sticky top-36 bg-white h-[70vh] overflow-y-auto'>
+                    <div className='sticky top-36 bg-white h-[60vh] overflow-y-auto'>
                         <div className='flex items-center justify-between pb-2 sticky top-0 bg-white'>
                             <h3 className='text-lg font-semibold'>Total Medicine ({filteredMedicines.length})</h3>
                             <select className='text-right text-lg font-medium text-primary focus:outline-none'>

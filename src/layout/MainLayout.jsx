@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 const MainLayout = () => {
@@ -7,6 +8,7 @@ const MainLayout = () => {
         <div className='max-w-[1440px] mx-auto'>
             <Header />
             <Outlet />
+            <Footer />
         </div>
     );
 };

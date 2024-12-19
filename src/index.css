@@ -6,6 +6,14 @@ body {
     background-color: #FAFAFA;
 }
 
+.listings {
+    width: 55%;
+}
+
+.cart {
+    width: 45%;
+}
+
 .headerBtn {
     display: flex;
     flex-direction: row;
@@ -17,29 +25,58 @@ body {
     border-radius: 24px;
     transition: all 0.3s ease-in-out;
 }
+
 .headerBtn:hover {
-    border-color:#149e85;
+    border-color: #149e85;
     background-color: #149e85;
     color: #ffffff;
 }
-.headerWarnBtn{
-    border:1px solid #fdb400;
+
+.headerWarnBtn {
+    border: 1px solid #fdb400;
     color: #fdb400;
     transition: all 0.3s ease-in-out;
 }
-.headerWarnBtn:hover{
-    border-color:#fdb400;
+
+.headerWarnBtn:hover {
+    border-color: #fdb400;
     color: #ffffff;
     background-color: #fdb400;
 }
-.headerDangerBtn{
-    border:1px solid #fe6e6e;
+
+.headerDangerBtn {
+    border: 1px solid #fe6e6e;
     color: #fe6e6e;
     transition: all 0.3s ease-in-out;
 }
 
-.headerDangerBtn:hover{
-    border-color:#fe6e6e;
+.headerDangerBtn:hover {
+    border-color: #fe6e6e;
     color: #ffffff;
     background-color: #fe6e6e;
+}
+
+.totalBtn {
+    color: #000 !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fafafa;
+    margin: 6px 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #acacac;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7b7b7b;
 }

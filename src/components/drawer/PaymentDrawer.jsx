@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { IoIosArrowForward } from 'react-icons/io';
 import { Drawer } from 'vaul';
-import { DataContext } from '../../context/DataContext';
-const PaymentDrawer = ({ children }) => {
-    const { isOpen, setIsOpen } = useContext(DataContext);
+const PaymentDrawer = () => {
     return (
-        <Drawer.Root direction="right" dismissible={false} open={isOpen} onOpenChange={setIsOpen}>
+        <Drawer.Root direction="right">
+            <Drawer.Trigger className="flex items-center py-3 px-6 rounded-lg text-xl text-white font-semibold bg-primary">
+                Payment
+                <IoIosArrowForward />
+            </Drawer.Trigger>
             <Drawer.Portal>
                 <Drawer.Overlay className="fixed inset-0 bg-black/40" />
                 <Drawer.Content
-                    className="right-2 top-2 bottom-2 fixed z-10 outline-none w-[310px] flex"
+                    className="right-2 top-2 bottom-2 fixed z-[99999] outline-none w-96 flex"
                     // The gap between the edge of the screen and the drawer is 8px in this case.
                     style={{ '--initial-transform': 'calc(100% + 8px)' }}
                 >
@@ -19,15 +22,8 @@ const PaymentDrawer = ({ children }) => {
                                 This one specifically is not touching the edge of the screen, but that&apos;s not required for a side
                                 drawer.
                             </Drawer.Description>
-                            {children}
                         </div>
                     </div>
-                    <button
-                        className="rounded-md mt-4 w-full bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-typo focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Close Drawer
-                    </button>
                 </Drawer.Content>
             </Drawer.Portal>
         </Drawer.Root>

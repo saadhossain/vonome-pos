@@ -42,7 +42,7 @@ const CartTable = ({ filteredCart }) => {
     };
 
     return (
-        <div className="text-typo bg-background border border-gray-500 rounded-lg max-h-[400px] overflow-y-auto mt-4 sticky top-36">
+        <div className="text-typo bg-background border border-gray-500 rounded-lg max-h-[52vh] overflow-y-auto mt-4 sticky top-36">
             <table className="min-w-full font-medium">
                 <thead className="sticky top-0 bg-background">
                     <tr className="text-left border-b border-gray-400">
@@ -63,7 +63,7 @@ const CartTable = ({ filteredCart }) => {
                             key={item.id}
                             className="border-b border-opacity-20 border-typo last-of-type:border-b-0"
                         >
-                            <td className="p-3 border-l-0 border-gray-400">
+                            <td className="py-3 px-1 border-l-0 border-gray-400 w-52">
                                 <p>{item.title}</p>
                             </td>
                             <td className="p-3 border-l border-gray-400">

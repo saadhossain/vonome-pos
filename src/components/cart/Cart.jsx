@@ -8,7 +8,7 @@ const Cart = () => {
     const [searchText, setSearchText] = useState('');
     const filteredCart = cartItems.filter((med) => searchText ? med.title.toLowerCase().includes(searchText) || med.generics.toLowerCase().includes(searchText) : cartItems);
     return (
-        <div className='w-5/12 bg-white px-2 pt-5'>
+        <div className='bg-white px-2 pt-5 cart'>
             <div className='border border-secondary rounded-lg p-2 sticky top-[86px]'>
                 <input
                     onChange={(e) => setSearchText(e.target.value)}
