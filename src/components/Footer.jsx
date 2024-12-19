@@ -4,6 +4,7 @@ import Button from './Button';
 import PaymentDrawer from './drawer/PaymentDrawer';
 
 const Footer = () => {
+    // const { sub };
     return (
         <footer className='bg-white border-t border-secondary pt-2 mt-1 px-5'>
             <div className='flex items-center justify-between'>

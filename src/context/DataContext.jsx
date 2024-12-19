@@ -6,6 +6,7 @@ const DataProvider = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
     const [cartItems, setCartIems] = useState([]);
+    const [subTotal, setSubTotal] = useState(0);
 
     useEffect(() => {
         const savedItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -13,7 +14,7 @@ const DataProvider = ({ children }) => {
     }, []);
 
     //Serve the data to the provider
-    const data = { isOpen, setIsOpen, searchText, setSearchText, cartItems, setCartIems };
+    const data = { isOpen, setIsOpen, searchText, setSearchText, cartItems, setCartIems, subTotal, setSubTotal };
     return (
         <DataContext.Provider value={data}>
             {children}

@@ -21,7 +21,7 @@ const MedicineCard = ({ med }) => {
         <div className='border border-secondary rounded-lg p-2'>
             <div className='flex gap-2'>
                 <img src={med.image} alt={med.title} className='w-20 border border-secondary rounded-lg p-2' />
-                <p className={`${med.stock > 0 ? 'text-success' : 'text-danger'}`}>{med.stock > 0 ? `In Stock: ${med.stock}` : 'Out of Stock'}</p>
+                <p className={`${med.stock > 0 ? 'text-success' : 'text-danger'}`}>{med.stock > 0 ? `Stock: ${med.stock}` : 'Out of Stock'}</p>
             </div>
             <h5 className='font-semibold'>{med.title}</h5>
             <div className='flex items-start justify-between'>

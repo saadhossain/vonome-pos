@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { MdRadioButtonChecked } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { DataContext } from '../../context/DataContext';
 
 const CartTable = ({ filteredCart }) => {
     const [units, setUnits] = useState({});
     const [quantities, setQuantities] = useState({});
+    const { setSubTotal } = useContext(DataContext);
+
+    //Get the saved cart from localstorage
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Function to handle unit change for a specific item
     const handleUnitChange = (itemId, value) => {
@@ -31,21 +36,30 @@ const CartTable = ({ filteredCart }) => {
         }));
     };
 
-    // Function to calculate subtotal
+    // Function to calculate subtotal for an item
     const calculateSubtotal = (item) => {
         const unit = units[item.id] || 10;
         const quantity = quantities[item.id] || 1;
         const discount = item.discountPercentage || 0;
 
         const subtotal = unit * item.unitPrice * quantity * (1 - discount / 100);
-        return subtotal.toFixed(2);
+        return subtotal;
     };
 
+    // Calculate the grand total
+    const cartTotal = cartItems.reduce((total, item) => {
+        return total + calculateSubtotal(item);
+    }, 0);
+
+    useEffect(() => {
+        setSubTotal(cartTotal.toFixed(2));
+    }, [units, quantities, calculateSubtotal]);
+
     return (
-        <div className="text-typo bg-background border border-gray-500 rounded-lg max-h-[52vh] overflow-y-auto mt-4 sticky top-36">
+        <div className="text-typo bg-background border border-gray-500 rounded-lg max-h-[35vh] overflow-y-auto mt-4 sticky top-36">
             <table className="min-w-full font-medium">
                 <thead className="sticky top-0 bg-background">
-                    <tr className="text-left border-b border-gray-400">
+                    <tr className="text-left border-b border-gray-400 shadow">
                         <th className="p-3 border-l-0 border-gray-400">Item</th>
                         <th className="p-3 border-l border-gray-400">Unit</th>
                         <th className="p-3 border-l border-gray-400">Price</th>
@@ -99,7 +113,7 @@ const CartTable = ({ filteredCart }) => {
                                 <p>{item.discountPercentage}%</p>
                             </td>
                             <td className="p-3 border-l border-gray-400">
-                                <p>{calculateSubtotal(item)}</p>
+                                <p>{calculateSubtotal(item).toFixed(2)}</p>
                             </td>
                             <td className="p-3 border-l border-gray-400">
                                 <RiDeleteBinLine />
