@@ -1,0 +1,200 @@
+[
+    {
+        "id": 1,
+        "title": "Napryn 500mg",
+        "generics": "Naproxen Sodium",
+        "brand": "Healthcare Pharmaceuticals Ltd",
+        "unitPrice": 11,
+        "quantity": 10,
+        "image": "/medicine/napryn-500-mg-tablet.jpg",
+        "stock": 59,
+        "discountPercentage": 15
+    },
+    {
+        "id": 2,
+        "title": "Rosuva 10mg",
+        "generics": "Rosuvastatin Calcium",
+        "brand": "Square Pharmaceuticals PLC",
+        "unitPrice": 22,
+        "quantity": 10,
+        "image": "/medicine/rosuva-10-mg-tablet.jpg",
+        "stock": 85,
+        "discountPercentage": 8
+    },
+    {
+        "id": 3,
+        "title": "Coralcin-D",
+        "generics": "Coral Calcium + Vitamin D3",
+        "brand": "Renata Limited",
+        "unitPrice": 11.50,
+        "quantity": 10,
+        "image": "/medicine/coralcin-d-500-mg-tablet.jpg",
+        "stock": 92,
+        "discountPercentage": 10
+    },
+    {
+        "id": 4,
+        "title": "Maxpro 20mg",
+        "generics": "Esomeprazole",
+        "brand": "Renata Limited",
+        "unitPrice": 7,
+        "quantity": 14,
+        "image": "/medicine/maxpro-20-mg-capsule.jpg",
+        "stock": 93,
+        "discountPercentage": 10
+    },
+    {
+        "id": 5,
+        "title": "Rolac 10mg",
+        "generics": "Ketorolac Tromethamine",
+        "brand": "Renata Limited",
+        "unitPrice": 12,
+        "quantity": 14,
+        "image": "/medicine/rolac-10-mg-tablet.jpg",
+        "stock": 64,
+        "discountPercentage": 10
+    },
+    {
+        "id": 6,
+        "title": "Cef-3 DS",
+        "generics": "Cefixime Trihydrate",
+        "brand": "Square Pharmaceuticals PLC",
+        "unitPrice": 60,
+        "quantity": 7,
+        "image": "/medicine/cef-3-ds-400-mg-capsule.jpg",
+        "stock": 27,
+        "discountPercentage": 6
+    },
+    {
+        "id": 7,
+        "title": "Napa 500mg",
+        "generics": "Paracetamol",
+        "brand": "Beximco Pharmaceuticals Ltd",
+        "unitPrice": 1.2,
+        "quantity": 10,
+        "image": "/medicine/napa-500-mg-tablet.jpg",
+        "stock": 84,
+        "discountPercentage": 0
+    },
+    {
+        "id": 8,
+        "title": "Bextram Gold",
+        "generics": "Multivitamin & Multimineral",
+        "brand": "Beximco Pharmaceuticals Ltd",
+        "unitPrice": 12,
+        "quantity": 30,
+        "image": "/medicine/bextram-gold-multivitamin-table.jpg",
+        "stock": 74,
+        "discountPercentage": 10
+    },
+    {
+        "id": 9,
+        "title": "Aristo Mom",
+        "generics": "10 Vitamin & 6 Mineral",
+        "brand": "Aristopharma Ltd",
+        "unitPrice": 3,
+        "quantity": 10,
+        "image": "/medicine/aristo-mom-tablet.jpg",
+        "stock": 76,
+        "discountPercentage": 5
+    },
+    {
+        "id": 10,
+        "title": "Napryn 500mg",
+        "generics": "Naproxen Sodium",
+        "brand": "Healthcare Pharmaceuticals Ltd",
+        "unitPrice": 11,
+        "quantity": 10,
+        "image": "/medicine/napryn-500-mg-tablet.jpg",
+        "stock": 59,
+        "discountPercentage": 15
+    },
+    {
+        "id": 11,
+        "title": "Rosuva 10mg",
+        "generics": "Rosuvastatin Calcium",
+        "brand": "Square Pharmaceuticals PLC",
+        "unitPrice": 22,
+        "quantity": 10,
+        "image": "/medicine/rosuva-10-mg-tablet.jpg",
+        "stock": 85,
+        "discountPercentage": 8
+    },
+    {
+        "id": 12,
+        "title": "Coralcin-D",
+        "generics": "Coral Calcium + Vitamin D3",
+        "brand": "Renata Limited",
+        "unitPrice": 11.50,
+        "quantity": 10,
+        "image": "/medicine/coralcin-d-500-mg-tablet.jpg",
+        "stock": 92,
+        "discountPercentage": 10
+    },
+    {
+        "id": 13,
+        "title": "Maxpro 20mg",
+        "generics": "Esomeprazole",
+        "brand": "Renata Limited",
+        "unitPrice": 7,
+        "quantity": 14,
+        "image": "/medicine/maxpro-20-mg-capsule.jpg",
+        "stock": 93,
+        "discountPercentage": 10
+    },
+    {
+        "id": 14,
+        "title": "Rolac 10mg",
+        "generics": "Ketorolac Tromethamine",
+        "brand": "Renata Limited",
+        "unitPrice": 12,
+        "quantity": 14,
+        "image": "/medicine/rolac-10-mg-tablet.jpg",
+        "stock": 64,
+        "discountPercentage": 10
+    },
+    {
+        "id": 15,
+        "title": "Cef-3 DS",
+        "generics": "Cefixime Trihydrate",
+        "brand": "Square Pharmaceuticals PLC",
+        "unitPrice": 60,
+        "quantity": 7,
+        "image": "/medicine/cef-3-ds-400-mg-capsule.jpg",
+        "stock": 27,
+        "discountPercentage": 6
+    },
+    {
+        "id": 16,
+        "title": "Napa 500mg",
+        "generics": "Paracetamol",
+        "brand": "Beximco Pharmaceuticals Ltd",
+        "unitPrice": 1.2,
+        "quantity": 10,
+        "image": "/medicine/napa-500-mg-tablet.jpg",
+        "stock": 84,
+        "discountPercentage": 0
+    },
+    {
+        "id": 17,
+        "title": "Bextram Gold",
+        "generics": "Multivitamin & Multimineral",
+        "brand": "Beximco Pharmaceuticals Ltd",
+        "unitPrice": 12,
+        "quantity": 30,
+        "image": "/medicine/bextram-gold-multivitamin-table.jpg",
+        "stock": 74,
+        "discountPercentage": 10
+    },
+    {
+        "id": 18,
+        "title": "Aristo Mom",
+        "generics": "10 Vitamin & 6 Mineral",
+        "brand": "Aristopharma Ltd",
+        "unitPrice": 3,
+        "quantity": 10,
+        "image": "/medicine/aristo-mom-tablet.jpg",
+        "stock": 76,
+        "discountPercentage": 5
+    }
+]
