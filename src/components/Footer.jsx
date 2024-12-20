@@ -1,14 +1,21 @@
 import React, { useContext } from 'react';
 import { CiCalculator2 } from "react-icons/ci";
+import { GrPowerReset } from "react-icons/gr";
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { Link, useLocation } from 'react-router-dom';
 import { DataContext } from '../context/DataContext';
 import Button from './Button';
 import PayDrawer from './drawer/PayDrawer';
 
 const Footer = () => {
-    const { grandTotal } = useContext(DataContext);
+    const { grandTotal, cartItems } = useContext(DataContext);
+
+    const location = useLocation();
+    const pathName = location.pathname;
+    console.log(pathName);
     return (
-        <footer className='bg-white border-t border-secondary pt-2 mt-1 px-5'>
-            <div className='flex items-center justify-between'>
+        <footer className='bg-primary md:bg-white md:border-t md:border-secondary md:pt-2 mt-1 md:px-5'>
+            <div className='hidden md:flex items-center justify-between'>
                 <Button className='bg-danger' title={'Reset'} />
                 <Button className='bg-info' title={'Add Info'} />
                 <Button className='bg-pink' title={'Discount'} />
@@ -20,6 +27,36 @@ const Footer = () => {
                 {/* Payment Drawer */}
                 <PayDrawer />
             </div>
+
+            {/* Footer Buttons for mobile device home page*/}
+            {
+                pathName === '/' &&
+                <div className='flex md:hidden items-center justify-between'>
+                    <button className='w-1/6 bg-white text-danger py-4 px-5'>
+                        <GrPowerReset className='w-6 h-6 mx-auto' />
+                    </button>
+                    <Link to='/cart' className='w-5/6 flex items-center gap-4 justify-between mx-5 font-semibold text-white'>
+                        <span>{cartItems?.length} Items</span>
+                        <span className='flex items-center gap-3'>Tk. {grandTotal} <IoIosArrowForward className='w-6 h-6' /></span>
+                    </Link>
+                </div>
+            }
+            {/* Footer Buttons for mobile device cart page*/}
+            {
+                pathName === '/cart' && <div className='flex md:hidden items-center justify-between font-semibold text-white px-5'>
+                    <Link to='/' className='w-1/3 flex items-center gap-2'>
+                        <IoIosArrowBack className='w-6 h-6' />
+                        Back
+                    </Link>
+                    <p className='w-1/3 bg-[#f5fafa] text-typo px-5 text-center'>
+                        Total:<br />
+                        <span className='text-lg font-bold'>Tk. {grandTotal}</span>
+                    </p>
+                    <div className='w-1/3'>
+                        <PayDrawer />
+                    </div>
+                </div>
+            }
         </footer>
     );
 };

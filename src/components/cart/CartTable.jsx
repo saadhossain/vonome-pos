@@ -70,7 +70,7 @@ const CartTable = ({ filteredCart }) => {
             {filteredCart.length < 1 ? <div className='text-center mt-10 border-b-2 border-warning pb-5 mx-10'>
                 <h3 className='text-lg font-semibold'>No Products in the Cart</h3>
                 <p className='text-sm font-medium'>Please add some...</p>
-            </div> : <div className="text-typo bg-background border border-gray-500 rounded-lg max-h-[35vh] overflow-y-auto mt-4 sticky top-36">
+            </div> : <div className="text-typo bg-background border border-gray-500 rounded-lg max-h-[50vh] md:max-h-[35vh] overflow-y-auto mt-4 md:sticky top-36">
                 <table className="min-w-full font-medium">
                     <thead className="sticky top-0 bg-background">
                         <tr className="text-left border-b border-gray-400 shadow">

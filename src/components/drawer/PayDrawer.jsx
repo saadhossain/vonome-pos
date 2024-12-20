@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { FaWindowClose } from 'react-icons/fa';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Drawer } from 'vaul';
 import { DataContext } from '../../context/DataContext';
@@ -23,7 +24,7 @@ const PayDrawer = () => {
                     className="right-2 top-2 bottom-2 fixed z-[99999] outline-none w-[450px] flex"
                     style={{ '--initial-transform': 'calc(100% + 8px)' }}
                 >
-                    <div className="bg-white h-full w-full px-5 py-1 flex flex-col rounded-lg border-4 border-info">
+                    <div className="bg-white h-full w-full px-5 py-1 flex flex-col rounded-lg border-4 border-info overflow-y-auto md:overflow-hidden">
                         {/* Title and Close Icon */}
                         <div className="max-w-md flex items-center justify-between border-b-2 border-secondary">
                             <div>
@@ -32,10 +33,9 @@ const PayDrawer = () => {
                                     Order <span className='font-semibold'>#893</span>
                                 </Drawer.Description>
                             </div>
-                            <button
+                            <FaWindowClose
                                 onClick={() => setIsOpen(false)}
-                                className='font-2xl font-semibold'
-                            >X</button>
+                                className='w-7 h-7 text-danger' />
                         </div>
                         {/* Total Amount */}
                         <div className='flex items-center justify-between my-3 bg-[#F5FAFA] py-2 px-5'>

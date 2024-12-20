@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { IoSearch } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../../context/DataContext';
+import { menuItems } from '../../utils/menuItems';
 import MedicineCard from '../MedicineCard';
 
 const ProductListings = ({ filteredMedicines }) => {
@@ -13,58 +14,7 @@ const ProductListings = ({ filteredMedicines }) => {
         'Renata Limited',
         'Healthcare Pharmaceuticals Ltd'
     ];
-    const menuItems = [
-        {
-            id: 1,
-            title: 'All Medicine',
-            url: '/'
-        },
-        {
-            id: 2,
-            title: 'Grocery',
-            url: '/'
-        },
-        {
-            id: 3,
-            title: 'Cosmetics',
-            url: '/'
-        },
-        {
-            id: 4,
-            title: 'Baby Foods',
-            url: '/'
-        },
-        {
-            id: 5,
-            title: 'Discount %',
-            url: '/'
-        },
-        {
-            id: 6,
-            title: 'New Arrivals',
-            url: '/'
-        },
-        {
-            id: 7,
-            title: 'Promotions',
-            url: '/'
-        },
-        {
-            id: 8,
-            title: 'Hot Deals',
-            url: '/'
-        },
-        {
-            id: 9,
-            title: 'Client Choice',
-            url: '/'
-        },
-        {
-            id: 10,
-            title: 'Family Mart',
-            url: '/'
-        }
-    ];
+
     return (
         <div className="listings bg-white px-2 pt-5">
             <div className='border border-secondary rounded-lg p-2 mx-5 sticky top-[86px]'>
@@ -78,7 +28,8 @@ const ProductListings = ({ filteredMedicines }) => {
             </div>
             {/* Menu Sidebar and Medicine List */}
             <div className='w-full flex gap-2 mt-4 sticky top-40'>
-                <div className='w-3/12'>
+                {/* Desktop Menus */}
+                <div className='w-3/12 hidden md:block'>
                     <div className='bg-white sticky top-0 h-[60vh] overflow-y-auto'>
                         <div className='flex flex-col'>
                             {
@@ -91,7 +42,8 @@ const ProductListings = ({ filteredMedicines }) => {
                         </div>
                     </div>
                 </div>
-                <div className='w-9/12'>
+                {/* Medicine Cards */}
+                <div className='w-full md:w-9/12'>
                     <div className='sticky top-36 bg-white h-[60vh] overflow-y-auto'>
                         <div className='flex items-center justify-between pb-2 sticky top-0 bg-white'>
                             <h3 className='text-lg font-semibold'>Total Medicine ({filteredMedicines.length})</h3>
@@ -105,7 +57,7 @@ const ProductListings = ({ filteredMedicines }) => {
                                 ))}
                             </select>
                         </div>
-                        <div className='grid grid-cols-3 gap-3'>
+                        <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
                             {filteredMedicines.map((med) => (
                                 <MedicineCard key={med.id} med={med} />
                             ))}

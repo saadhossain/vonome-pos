@@ -16,7 +16,7 @@ const PayCalc = () => {
                 </tr>
                 <tr className="border-b border-secondary border-opacity-50">
                     <td className='p-1'>Vat/Tax</td>
-                    <td className='text-right p-1 font-medium'>Tk. {vatTaxAmount}</td>
+                    <td className='text-right p-1 font-medium'>Tk. {vatTaxAmount.toFixed(2)}</td>
                 </tr>
                 <tr className="border-b border-secondary border-opacity-50">
                     <td className='p-1'>Discount</td>

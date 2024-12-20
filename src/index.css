@@ -65,6 +65,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 /* Track */
@@ -82,4 +83,14 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #7b7b7b;
+}
+
+@media (max-width: 767px) {
+    .listings {
+        width: 96%;
+    }
+    
+    .cart {
+        width: 96%;
+    }
 }
