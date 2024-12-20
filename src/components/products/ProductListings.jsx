@@ -16,7 +16,7 @@ const ProductListings = ({ filteredMedicines }) => {
     ];
 
     return (
-        <div className="listings bg-white px-2 pt-5">
+        <div className="listings bg-white px-2 pt-5 pb-5 md:pb-0">
             <div className='border border-secondary rounded-lg p-2 mx-5 sticky top-[86px]'>
                 <input
                     onChange={(e) => setSearchText(e.target.value)}
@@ -45,9 +45,9 @@ const ProductListings = ({ filteredMedicines }) => {
                 {/* Medicine Cards */}
                 <div className='w-full md:w-9/12'>
                     <div className='sticky top-36 bg-white h-[60vh] overflow-y-auto'>
-                        <div className='flex items-center justify-between pb-2 sticky top-0 bg-white'>
-                            <h3 className='text-lg font-semibold'>Total Medicine ({filteredMedicines.length})</h3>
-                            <select className='text-right text-lg font-medium text-primary focus:outline-none'>
+                        <div className='flex items-center justify-between gap-2 pb-2 sticky top-0 bg-white'>
+                            <h3 className='w-2/5 text-base md:text-lg font-semibold'>Total Medicine ({filteredMedicines.length})</h3>
+                            <select className='w-3/5 text-right text-lg font-medium bg-white text-primary focus:outline-none'>
                                 <option value=''>Select Brand</option>
                                 {brands.map((item, index) => (
                                     <option

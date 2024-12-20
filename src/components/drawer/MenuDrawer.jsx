@@ -26,7 +26,7 @@ const MenuDrawer = () => {
                             <Link to='/'><img src={logo} alt='Vonome' className='w-10 h-10' /></Link>
                             <FaWindowClose
                                 onClick={() => setIsOpen(false)}
-                                className='w-7 h-7 text-danger' />
+                                className='w-7 h-7 text-danger cursor-pointer' />
                         </div>
                         {/* Content Here */}
                         <div className='bg-white sticky top-0 h-full overflow-y-auto'>

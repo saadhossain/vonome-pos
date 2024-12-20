@@ -12,7 +12,6 @@ const Footer = () => {
 
     const location = useLocation();
     const pathName = location.pathname;
-    console.log(pathName);
     return (
         <footer className='bg-primary md:bg-white md:border-t md:border-secondary md:pt-2 mt-1 md:px-5'>
             <div className='hidden md:flex items-center justify-between'>

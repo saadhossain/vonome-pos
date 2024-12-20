@@ -10,19 +10,19 @@ const CartMobile = () => {
     const [searchText, setSearchText] = useState('');
     const filteredCart = cartItems.filter((med) => searchText ? med.title.toLowerCase().includes(searchText) || med.generics.toLowerCase().includes(searchText) : cartItems);
     return (
-        <div className='bg-white px-2 pt-2 cart relative'>
+        <div className='bg-white px-2 pb-5 md:pb-0 pt-2 cart relative'>
             {/* User Selection */}
             <div className='mb-2'>
                 <div className='flex items-center justify-between'>
                     <select
-                        className='w-4/6 focus:outline-none pl-8 border border-gray-400 rounded-l-lg text-secondary p-1 font-medium'
+                        className='w-3/5 focus:outline-none pl-8 border border-gray-400 rounded-l-lg text-secondary p-1 font-medium'
                     >
                         <option value="">Walking Customer</option>
                         <option value="">Vonome Admin</option>
                         <option value="">Saad Hossain</option>
                     </select>
                     <FaUser className='absolute top-4 left-4 w-4 h-4 text-secondary' />
-                    <button className='w-2/6 flex items-center gap-1 bg-primary text-white py-1 px-3 rounded-r-lg'><FaPlus /> Add Customer</button>
+                    <button className='w-2/5 flex items-center gap-1 bg-primary text-white py-1 px-3 rounded-r-lg'><FaPlus /> Add Customer</button>
                 </div>
             </div>
             {/* Search Input */}

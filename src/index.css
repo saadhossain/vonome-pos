@@ -87,10 +87,10 @@ body {
 
 @media (max-width: 767px) {
     .listings {
-        width: 96%;
+        width: 100%;
     }
     
     .cart {
-        width: 96%;
+        width: 100%;
     }
 }

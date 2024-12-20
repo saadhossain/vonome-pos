@@ -35,7 +35,7 @@ const PayDrawer = () => {
                             </div>
                             <FaWindowClose
                                 onClick={() => setIsOpen(false)}
-                                className='w-7 h-7 text-danger' />
+                                className='w-7 h-7 text-danger cursor-pointer' />
                         </div>
                         {/* Total Amount */}
                         <div className='flex items-center justify-between my-3 bg-[#F5FAFA] py-2 px-5'>
