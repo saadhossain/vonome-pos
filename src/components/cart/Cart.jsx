@@ -10,7 +10,7 @@ const Cart = () => {
     const [searchText, setSearchText] = useState('');
     const filteredCart = cartItems.filter((med) => searchText ? med.title.toLowerCase().includes(searchText) || med.generics.toLowerCase().includes(searchText) : cartItems);
     return (
-        <div className='bg-white px-2 pt-5 cart'>
+        <div className='bg-white px-2 pt-5 cart relative'>
             {/* User Selection */}
             <div className='sticky top-[86px] mb-2'>
                 <div className='flex items-center justify-between'>

@@ -1,13 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../context/DataContext';
 
 const CartCalculation = () => {
-    const { subTotal } = useContext(DataContext);
+    const { subTotal, setGrandTotal } = useContext(DataContext);
     const vatTax = 5;
 
-    const vatTaxAmount = subTotal * (1 + vatTax / 100);
+    const vatTaxAmount = subTotal * (vatTax / 100);
+    const [adjustment, setAdjustment] = useState(0);
+    const adjustmentAmount = parseFloat(adjustment);
+
+    const finalAmount = (parseFloat(subTotal) + vatTaxAmount + adjustmentAmount).toFixed(2);
+
+    //Set the grandtotal amount
+    useEffect(() => {
+        setGrandTotal(finalAmount);
+    }, [subTotal, vatTaxAmount, adjustment]);
     return (
-        <div className='flex items-center justify-between font-semibold mt-2'>
+        <div className='cartCalculation flex items-center justify-between font-semibold mt-2 absolute bottom-2'>
             <div className='flex flex-col items-end gap-2'>
                 {/* Subtotal */}
                 <div className='flex items-center gap-2 text-right'>
@@ -29,7 +38,11 @@ const CartCalculation = () => {
                 {/* Adjustment */}
                 <div className='flex items-center gap-2 text-right'>
                     <p>Adjustment</p>
-                    <input type='text' className='w-16 py-1 px-2 rounded-lg border-2 border-typo' value={0} />
+                    <input
+                        onChange={(e) => setAdjustment(e.target.value)}
+                        type='number'
+                        className='w-16 py-1 px-2 rounded-lg border-2 border-typo' value={adjustment}
+                    />
                 </div>
             </div>
         </div>

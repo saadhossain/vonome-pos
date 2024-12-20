@@ -13,6 +13,9 @@ body {
 .cart {
     width: 45%;
 }
+.cartCalculation{
+    width: 96%;
+}
 
 .headerBtn {
     display: flex;
