@@ -3,6 +3,7 @@ import { IoSearch } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../../context/DataContext';
 import { menuItems } from '../../utils/menuItems';
+import Loading from '../Loading';
 import MedicineCard from '../MedicineCard';
 
 const ProductListings = ({ filteredMedicines }) => {
@@ -57,11 +58,13 @@ const ProductListings = ({ filteredMedicines }) => {
                                 ))}
                             </select>
                         </div>
-                        <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
-                            {filteredMedicines.map((med) => (
-                                <MedicineCard key={med.id} med={med} />
-                            ))}
-                        </div>
+                        {
+                            filteredMedicines.length < 1 ? <Loading /> : <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
+                                {filteredMedicines.map((med) => (
+                                    <MedicineCard key={med.id} med={med} />
+                                ))}
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
