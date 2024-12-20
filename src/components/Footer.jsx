@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CiCalculator2 } from "react-icons/ci";
 import { DataContext } from '../context/DataContext';
 import Button from './Button';
-import PaymentDrawer from './drawer/PaymentDrawer';
+import PayDrawer from './drawer/PayDrawer';
 
 const Footer = () => {
     const { grandTotal } = useContext(DataContext);
@@ -18,7 +18,7 @@ const Footer = () => {
                     <CiCalculator2 className='w-10 h-10 border-2 border-white text-white rounded-lg' />
                 </button>
                 {/* Payment Drawer */}
-                <PaymentDrawer />
+                <PayDrawer />
             </div>
         </footer>
     );

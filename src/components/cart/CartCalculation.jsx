@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { DataContext } from '../../context/DataContext';
 
 const CartCalculation = () => {
-    const { subTotal, setGrandTotal } = useContext(DataContext);
-    const vatTax = 5;
+    const { subTotal, setGrandTotal, adjustment, setAdjustment } = useContext(DataContext);
 
-    const vatTaxAmount = subTotal * (vatTax / 100);
-    const [adjustment, setAdjustment] = useState(0);
+    const vatTaxAmount = subTotal * (5 / 100);
     const adjustmentAmount = parseFloat(adjustment);
 
     const finalAmount = (parseFloat(subTotal) + vatTaxAmount + adjustmentAmount).toFixed(2);
