@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { CiCalculator2 } from "react-icons/ci";
 import { GrPowerReset } from "react-icons/gr";
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -8,10 +9,16 @@ import Button from './Button';
 import PayDrawer from './drawer/PayDrawer';
 
 const Footer = () => {
-    const { grandTotal, cartItems } = useContext(DataContext);
+    const { grandTotal, cartItems, setCartIems } = useContext(DataContext);
 
     const location = useLocation();
     const pathName = location.pathname;
+
+    const handleResetCart = () => {
+        localStorage.removeItem('cart');
+        toast.success('Cart Reset Success.');
+        setCartIems([]);
+    };
     return (
         <footer className='bg-primary md:bg-white md:border-t md:border-secondary md:pt-2 mt-1 md:px-5'>
             <div className='hidden md:flex items-center justify-between'>
@@ -31,7 +38,9 @@ const Footer = () => {
             {
                 pathName === '/' &&
                 <div className='flex md:hidden items-center justify-between'>
-                    <button className='w-1/6 bg-white text-danger py-4 px-5'>
+                    <button
+                        onClick={() => handleResetCart()}
+                        className='w-1/6 bg-white text-danger py-4 px-5'>
                         <GrPowerReset className='w-6 h-6 mx-auto' />
                     </button>
                     <Link to='/cart' className='w-5/6 flex items-center gap-4 justify-between mx-5 font-semibold text-white'>
